@@ -1,0 +1,18 @@
+import React from "react";
+import styles from "./ProductCard.module.css"
+
+
+
+const ProductCard = (props) => {
+    const {img, price, name} = props.productData
+    const productName = name.toUpperCase();
+    return (
+        <article className={styles['product-card']}>
+            <img src={img} className={styles['product-img']}/>
+            <h3>{productName}</h3>
+            <p>{price} €</p>
+        </article>
+    )
+}
+
+export default ProductCard;
