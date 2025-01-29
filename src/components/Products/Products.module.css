@@ -1,7 +1,7 @@
 .products-section {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(4, 1fr);
     width: 80%;
     margin: 0 auto;
-
+    gap:  1rem;
 }

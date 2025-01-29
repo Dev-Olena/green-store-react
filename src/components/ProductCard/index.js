@@ -8,9 +8,14 @@ const ProductCard = (props) => {
     const productName = name.toUpperCase();
     return (
         <article className={styles['product-card']}>
-            <img src={img} className={styles['product-img']}/>
+            <img src={img} className={styles['product-img']} alt={`${name} image`}/>
             <h3>{productName}</h3>
-            <p>{price} €</p>
+            <div className={styles['price-row']}>
+                <p>{price} €</p>
+                <p className={styles.heart}>♡</p>
+            </div>
+            <button>Add to cart</button>
+            
         </article>
     )
 }

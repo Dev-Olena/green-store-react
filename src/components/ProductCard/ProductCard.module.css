@@ -1,7 +1,50 @@
+*{
+    box-sizing: border-box;
+}
 .product-card {
-
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap:0.5rem;
+    background-color: rgb(247, 249, 250);
+    padding: 0.5rem;
+    color: rgb(94, 92, 92);
+    font-weight: 500;
 }
 
 .product-img {
     width: 100%;
+}
+
+.price-row {
+    display: flex;
+    width: 100%;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+.heart {
+    font-size: 1.5rem;
+    color: rgb(124, 179,66);
+    font-weight: 800;
+}
+.heart:active {
+
+}
+
+button {
+    padding: 0.2rem;
+    width: 40%;
+    box-sizing: border-box;
+    background-color: rgb(124, 179,66);
+    color: white;
+    border: 1px solid transparent;
+    transition: all 0.3s;
+
+}
+
+button:hover {
+    background-color: transparent;
+    border: 1px solid rgb(124, 179,66);
+    color: rgb(124, 179,66)
 }
