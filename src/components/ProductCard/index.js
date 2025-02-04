@@ -14,7 +14,7 @@ const ProductCard = (props) => {
                 <p>{price} €</p>
                 <p className={styles.heart}>♡</p>
             </div>
-            <button>Add to cart</button>
+            <button className={styles['btn-add']}>Add to cart</button>
             
         </article>
     )
