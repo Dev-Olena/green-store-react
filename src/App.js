@@ -1,10 +1,10 @@
 import React, {useState, useEffect} from "react";
-import './reset.css';
+import {BrowserRouter, Routes, Route, Link} from "react-router-dom";
 import CartContext from "./contexts/CartContexts";
 import Header from "./components/Header";
 import HomePage from "./pages/HomePage";
 import CartPage from "./pages/CartPage";
-
+import './reset.css';
 import "./style.css"
 
 
@@ -15,13 +15,14 @@ function App() {
   useEffect(() => localStorage.setItem('cart',  JSON.stringify(cart)), [cart]);
 
   return (
-    <div className='app-container'>
-      <Header />
-      <CartContext.Provider value={[cart, setCart]}>
-        {/* <HomePage /> */}
-        <CartPage />
-      </CartContext.Provider>
-    </div>
+  <CartContext.Provider value={[cart, setCart]}>
+    <BrowserRouter>
+      <Routes>
+          <Route path= "/" element = {<HomePage />} />
+          <Route path="/cart" element={<CartPage />} />
+      </Routes>
+    </BrowserRouter>
+  </CartContext.Provider>
   );
   
 }
