@@ -4,7 +4,7 @@ import CartContext from "../../contexts/CartContexts";
 
 const CartList = () => {
     const [cart, setCart] = useContext(CartContext);
-    // console.log(cart[1])
+
 
     const totalPrice = cart.reduce((total, item) => total + item.price, 0).toFixed(2);
     
@@ -13,6 +13,7 @@ const CartList = () => {
         <section>
             {cart.map((item) => {return <p key={item.id}> {`${item.name} ${item.price} € Quantity: ${item.quantity}`}</p>})}
             <p>Total: {totalPrice} €</p>
+            <button onClick={() => setCart([])}>Clear cart</button>
         </section>
     )
 }
