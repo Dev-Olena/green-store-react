@@ -11,9 +11,11 @@ const CartList = () => {
 
     return (
         <section>
+            <button onClick={() => setCart([])}>Clear cart</button>
             {cart.map((item) => {return <p key={item.id}> {`${item.name} ${item.price} € Quantity: ${item.quantity}`}</p>})}
             <p>Total: {totalPrice} €</p>
-            <button onClick={() => setCart([])}>Clear cart</button>
+            <button>Checkout</button>
+            
         </section>
     )
 }

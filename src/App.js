@@ -18,7 +18,7 @@ function App() {
     <div className='app-container'>
       <Header />
       <CartContext.Provider value={[cart, setCart]}>
-        <HomePage />
+        {/* <HomePage /> */}
         <CartPage />
       </CartContext.Provider>
     </div>
