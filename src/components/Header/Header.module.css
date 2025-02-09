@@ -3,7 +3,7 @@
     flex-direction: row;
     justify-content: flex-start;
     align-items: center;
-    padding: 1rem;
+    padding: 1.5% 2%;
     border-bottom: 1.5px solid rgb(94, 92, 92);
     box-sizing: border-box;
 }
@@ -14,4 +14,28 @@
 .title {
     font-size: 1.5rem;
     color: rgb(94, 92, 92);
+    padding: 0 1rem;
+}
+
+.nav-bar {
+    margin-left: auto;
+    display: flex;
+    /* gap: 0.5rem; */
+}
+
+.nav-bar-item {
+    cursor: pointer;
+    text-decoration: none;
+    padding: 0.5rem 1rem;
+    font-size: 1.2rem;
+    transition: all 0.3s ease; 
+    align-content: center;
+}
+.nav-bar-item:hover {
+    background-color: rgb(247, 249, 250); 
+}
+
+.nav-bar-cart {
+    width: 2rem;
+
 }

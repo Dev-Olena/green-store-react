@@ -14,7 +14,7 @@ const CartPage = () => {
         <Header />
         <main className={styles['cart-main']}>
             <h2 className={styles['cart-header']}>Your cart</h2>
-            {cart.lenght > 0 ? 
+            {cart.length > 0 ? 
                 <CartList /> : 
                 <section className={styles['empty-cart']}>
                     <img src={cartIcon} className={styles['cart-icon']}/>

@@ -25,7 +25,7 @@ const Footer = () => {
             </li>
             <li className={styles.subscribe}>
                 <FooterTitle>
-                    Get plant care tips, exclusive offers, & 10% off your first order straight to your inbox.
+                    Get plant care tips, exclusive offers, & 10% off your first order straight to your inbox
                 </FooterTitle>
                 <form className={styles.form}>
                     <input type="email" placeholder="Enter your email here..."/>
