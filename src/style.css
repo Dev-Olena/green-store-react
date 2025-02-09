@@ -1,7 +1,12 @@
-.app-container {
+* {
+    box-sizing: border-box;
+    color:rgb(94, 92, 92);
+}
+
+/* .app-container {
     width: 100vw;
     min-height: 100vh;
     display: flex;
     flex-direction: column;
-    /* justify-content: space-between; */
-}
+    
+} */

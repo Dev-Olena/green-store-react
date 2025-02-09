@@ -1,8 +1,8 @@
 .home-page-container {
     width: 100vw;
     min-height: 100vh;
-    display: flex;
-    flex-direction: column;
-    /* justify-content: space-between; */
+    display: grid;
+    grid-template: minmax(60px, auto) 1fr minmax(150px, auto) / 1fr;
+    
 
 }
