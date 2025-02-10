@@ -1,5 +1,5 @@
 import React, {useContext} from "react";
-import {Link} from "react-router-dom";
+// import {Link} from "react-router-dom";
 import CartContext from "../../contexts/CartContexts";
 import Header from "../../components/Header";
 import CartList from "../../components/CartList";
@@ -21,9 +21,6 @@ const CartPage = () => {
                     <p className={styles['cart-message']}>Nothing here yet... Let`s fix that!</p>
                 </section>
             }
-        <Link to="/">
-            <button>Back to shopping</button>
-        </Link>
         </main>
         <Footer />
     </div>
