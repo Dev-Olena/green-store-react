@@ -12,7 +12,6 @@ const ProductCard = (props) => {
     const addToCart = (img, price, name, id) => {
         setCart((prevCart) => {
             const productAdded = prevCart.find((item) => item.id === id);
-            console.log("Product found:", productAdded);
             if(productAdded) {
                 const cartWithoutAdded = prevCart.filter((item) => item.id !== id);
                 return [...cartWithoutAdded, {img, name, price, id, quantity: productAdded.quantity + 1}]

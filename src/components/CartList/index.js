@@ -7,8 +7,6 @@ import styles from "./CartList.module.css";
 
 const CartList = () => {
     const [cart, setCart] = useContext(CartContext);
-    console.log(cart[0].price)
-
 
     const totalPrice = cart.reduce((total, item) => total + item.price, 0).toFixed(2);
     

@@ -17,3 +17,19 @@
 .name {
     grid-column: 2/3;
 }
+
+.btn-del {
+    height: 25%;
+    padding: 0;
+    background: transparent;
+    border: none;
+}
+.del-icon {
+    height: 100%;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.del-icon:hover {
+    content: url('../../../../public/assets/delete_green.svg');
+}

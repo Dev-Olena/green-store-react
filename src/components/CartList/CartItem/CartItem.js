@@ -1,9 +1,17 @@
-import React from "react";
+import React, {useContext} from "react";
+import CartContext from "../../../contexts/CartContexts";
 import styles from "./CartItem.module.css";
 
 const CartItem = (props) => {
-    
-    const {img, name, price, quantity} = props.data;
+    const [cart, setCart] = useContext(CartContext);
+    const {img, name, price, id, quantity} = props.data;
+    const delIcon = "/assets/delete.svg";
+
+    const removeFromCart = (id) => {
+        setCart((prevCart) => {
+            return prevCart.filter((product) => product.id != id);
+        })
+    }
     
     return (
         <article className={styles['cart-item']}>
@@ -11,6 +19,10 @@ const CartItem = (props) => {
             <p className={styles.name}>{name}</p>
             <p>{quantity}</p>
             <p>{price} </p>
+            <button className={styles['btn-del']} onClick={() => removeFromCart(id)}>
+                <img src={delIcon} className={styles['del-icon']} alt="Product delete button"/>
+            </button>
+            
         </article>
     )
 }
