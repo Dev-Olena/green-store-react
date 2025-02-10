@@ -1,0 +1,9 @@
+
+.page-container {
+    width: 100vw;
+    min-height: 100vh;
+    display: grid;
+    grid-template: minmax(50px, auto) 1fr minmax(150px, auto) / 1fr;
+    
+
+}
