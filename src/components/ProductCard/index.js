@@ -28,7 +28,7 @@ const ProductCard = (props) => {
     return (
         <article className={styles['product-card']}>
             <img src={img} className={styles['product-img']} alt={`${name} image`}/>
-            <h3>{productName}</h3>
+            <h3 className={styles['product-name']}>{productName}</h3>
             <div className={styles['price-row']}>
                 <p>{price} €</p>
                 <p className={styles.heart}>♡</p>
