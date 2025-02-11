@@ -14,23 +14,32 @@ const CartList = () => {
     return (
         <section className={styles['cart-list-container']}>
             
-                <p className={styles.quantity}>Quantity</p>
-                <p>Price,  €</p>
-                <button onClick={() => setCart([])}>Clear cart</button>
-           
-                {cart.map((item) => <CartItem key={item.id} data={item} className={styles['cart-list-container']}/>)}
-                <p className={styles.total}>
+                <p className={styles.quantity}>
+                    Quantity
+                </p>
+                <p className={styles.price}>
+                    Price,  €
+                </p>
+                <button onClick={() => setCart([])}>
+                    Clear cart
+                </button>
+                <div className={styles.line}></div>
+                {cart.map((item) => <CartItem 
+                    key={item.id} 
+                    data={item} 
+                    className={styles['cart-list-container']}/>)}
+                <div className={styles.line}></div>
+                <p className={`${styles.total} ${styles.bold}`}>
                     Total: 
                 </p>
-                <p className={styles['total-price']}>
+                <p className={`${styles['total-price']} ${styles.bold}`}>
                     {totalPrice} €
                 </p>
                 <Link to="/" className={styles ['btn-back']}>
                     <button >
-                    Back to shopping
-                </button>
+                        Back to shopping
+                    </button>
                 </Link>
-                
                 <button className={styles['btn-checkout']}>
                     Checkout
                 </button>
