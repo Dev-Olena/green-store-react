@@ -1,5 +1,7 @@
 import React, {useContext, useEffect} from "react";
 import CartContext from "../../contexts/CartContexts";
+
+import Button from "../Button/Button";
 import styles from "./ProductCard.module.css"
 
 
@@ -9,7 +11,7 @@ const ProductCard = (props) => {
     const{img, price, name, id} = props.productData;
     const productName = name.toUpperCase();
    
-    const addToCart = (img, price, name, id) => {
+    const addToCart = ({img, price, name, id}) => {
         setCart((prevCart) => {
             const productAdded = prevCart.find((item) => item.id === id);
             if(productAdded) {
@@ -21,9 +23,9 @@ const ProductCard = (props) => {
         })
         
     }
-    useEffect(() => {
-        console.log("Updated cart:", cart);
-      }, [cart]);
+    // useEffect(() => {
+    //     console.log("Updated cart:", cart);
+    //   }, [cart]);
     
     return (
         <article className={styles['product-card']}>
@@ -33,7 +35,12 @@ const ProductCard = (props) => {
                 <p>{price} €</p>
                 <p className={styles.heart}>♡</p>
             </div>
-            <button className={styles['btn-add']} onClick={() => addToCart(img, price, name, id)}>Add to cart</button>
+            <Button 
+                onClick={addToCart} 
+                params = {{img, price, name, id}} 
+                clName='btn-add'>
+                Add to cart
+            </Button>
             
         </article>
     )
