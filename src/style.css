@@ -1,3 +1,10 @@
+:root {
+    --dark-gray: rgb(94, 92, 92);
+    --light-gray: rgb(247, 249, 250);
+    --primary-green: rgb(124, 179,66);
+
+
+}
 * {
     box-sizing: border-box;
     color:rgb(94, 92, 92);

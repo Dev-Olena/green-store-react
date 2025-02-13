@@ -5,7 +5,7 @@
     justify-content: space-around;
     align-items: stretch;
     gap: 1rem;
-    background-color: rgb(247, 249, 250);
+    background-color: var(--light-gray);
 }
 
 .subscribe {

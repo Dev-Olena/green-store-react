@@ -25,7 +25,7 @@
 .line {
     grid-column: 1/-1;
     width: 100%;
-    border-bottom: 1.5px solid rgb(94, 92, 92);
+    border-bottom: 1.5px solid var(--dark-gray);
 }
 
 .bottom-line {
@@ -44,8 +44,8 @@
     flex-direction: row;
     align-items: center;
     gap: 1.5rem;
-    border:  1px solid rgb(124, 179,66);
+    border:  1px solid var(--primary-green);
     padding: 1rem 1.5rem;
-    background-color: rgb(247, 249, 250);
+    background-color: var(--light-gray);
 }
 

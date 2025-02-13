@@ -1,7 +1,7 @@
 .btn {
     padding: 0.3rem;
     font-size: 1rem;
-    background-color: rgb(124, 179,66);
+    background-color: var(--primary-green);
     color: white;
     cursor: pointer;
     border: 1px solid transparent;
@@ -11,8 +11,8 @@
 
 .btn:hover {
     background-color: white;
-    border: 1px solid rgb(124, 179,66);
-    color: rgb(124, 179,66);
+    border: 1px solid var(--primary-green);
+    color: var(--primary-green);
 }
 
 .btn-add {
@@ -21,8 +21,8 @@
 
 .del-btn, .btn-back {
     background-color: transparent;
-    border: 1px solid rgb(124, 179,66);
-    color: rgb(124, 179,66)
+    border: 1px solid var(--primary-green);
+    color: var(--primary-green);
 }
 
 .del-btn {
@@ -38,7 +38,7 @@
 }
 
 .del-btn:hover, .btn-back:hover {
-    background-color: rgb(124, 179,66);
+    background-color: var(--primary-green);
     border: 1px solid transparent;
     color: white;
 }
