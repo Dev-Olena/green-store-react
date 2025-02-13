@@ -1,14 +1,12 @@
 .cart-item {
     grid-column: 1/6;
     display: grid;
-    grid-template: 1fr/ 20% 1fr repeat(3, minmax(min-content, 0.5fr));
-    gap: 1rem;
+    grid-template: 1fr/ 20% 1fr repeat(3, minmax(min-content, 100px));
+    gap: 0.5rem;
     align-items: center;
     justify-items: center;
     width: 100%;
     background-color: rgb(247, 249, 250);;
-
-  
 }
 .img {
     width: 70%;

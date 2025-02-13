@@ -1,14 +1,25 @@
 import React, {useContext} from "react";
-import { Link } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import CartItem from "./CartItem/CartItem";
 import CartContext from "../../contexts/CartContexts";
+import Button from "../Button/Button";
 import styles from "./CartList.module.css";
 
 
 const CartList = () => {
     const [cart, setCart] = useContext(CartContext);
+    const navigate = useNavigate();
+
+    const clearCart = () => {
+        setCart([])
+    }
+
+    const goBack = () => {
+        navigate("/");
+    }
 
     const totalPrice = cart.reduce((total, item) => total + item.price, 0).toFixed(2);
+
     
 
     return (
@@ -20,29 +31,31 @@ const CartList = () => {
                 <p className={styles.price}>
                     Price,  €
                 </p>
-                <button onClick={() => setCart([])}>
+                <Button 
+                    onClick={clearCart}
+                    clName='del-btn'>
                     Clear cart
-                </button>
+                </Button>
                 <div className={styles.line}></div>
                 {cart.map((item) => <CartItem 
                     key={item.id} 
                     data={item} 
                     className={styles['cart-list-container']}/>)}
-                <div className={styles.line}></div>
-                <p className={`${styles.total} ${styles.bold}`}>
-                    Total: 
-                </p>
-                <p className={`${styles['total-price']} ${styles.bold}`}>
+                <div className={`${styles.line} ${styles['bottom-line']}`}></div>
+                <Button 
+                    onClick={goBack} 
+                    clName='btn-back'>
+                        {/* Todo arrow <span></span> */}
+                        Back to Store
+                </Button>
+                <div className={styles['total-check-container']}>
+                    <p className={styles.bold}>
                     {totalPrice} €
-                </p>
-                <Link to="/" className={styles ['btn-back']}>
-                    <button >
-                        Back to shopping
-                    </button>
-                </Link>
-                <button className={styles['btn-checkout']}>
-                    Checkout
-                </button>
+                    </p>
+                    <Button>
+                        Checkout
+                    </Button>
+                </div>
            
             
             
@@ -52,15 +65,3 @@ const CartList = () => {
 }
 
 export default CartList;
-
-
-
-{/* <div className={styles['cart-list-container']}>
-<button onClick={() => setCart([])}>Clear cart</button>
-<section>
-    {cart.map((item) => <CartItem key={item.id} data={item}/>)}
-</section>
-<p>Total: {totalPrice} €</p>
-<button>Checkout</button>
-
-</div> */}
