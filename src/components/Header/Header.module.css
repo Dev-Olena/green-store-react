@@ -3,9 +3,13 @@
     flex-direction: row;
     justify-content: flex-start;
     align-items: center;
-    padding: 1.5% 2%;
+    padding: 1% 2%;
     border-bottom: 1.5px solid var(--dark-gray);
+    background-color: var(--light-gray);
     box-sizing: border-box;
+    position: sticky;
+    top: 0;
+    z-index: 2;
 }
 
 .logo {
@@ -31,7 +35,7 @@
     align-content: center;
 }
 .nav-bar-item:hover {
-    background-color: var(--light-gray); 
+    /* todo */
 }
 
 .nav-bar-cart {
