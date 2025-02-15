@@ -9,23 +9,25 @@ import styles from "./ProductCard.module.css"
 const ProductCard = (props) => {
     const [cart, setCart] = useContext(CartContext);
     const{img, price, name, id} = props.productData;
+    
     const productName = name.toUpperCase();
+
+    // перевіряємо наявність товару в кошику
+    const isAdded = cart.some((item) => item.id === id);
+    const btnText = isAdded ? 'In cart' : 'Add to cart';
    
     const addToCart = ({img, price, name, id}) => {
         setCart((prevCart) => {
-            const productAdded = prevCart.find((item) => item.id === id);
-            if(productAdded) {
+            const addedProduct = prevCart.find((item) => item.id === id);
+            if(addedProduct) {
                 const cartWithoutAdded = prevCart.filter((item) => item.id !== id);
-                return [...cartWithoutAdded, {img, name, price, id, quantity: productAdded.quantity + 1}]
+                return [...cartWithoutAdded, {img, name, price, id, quantity: addedProduct.quantity + 1}]
             } else {
                 return [...prevCart, {img, name, price, id, quantity: 1}]
             }
         })
         
     }
-    // useEffect(() => {
-    //     console.log("Updated cart:", cart);
-    //   }, [cart]);
     
     return (
         <article className={styles['product-card']}>
@@ -39,7 +41,7 @@ const ProductCard = (props) => {
                 onClick={addToCart} 
                 params = {{img, price, name, id}} 
                 clName='btn-add'>
-                Add to cart
+               {btnText}
             </Button>
             
         </article>
