@@ -5,6 +5,7 @@ import styles from './ModalOrder.module.css'
 
 const ModalOrder = ({handler, id}) => {
 const [cart, setCart] = useContext(CartContext);
+
 const order = cart.find((item) => item.id === id);
 console.log(order);
 const {img, name, price, quantity} = order;
@@ -18,7 +19,7 @@ const  closeModal = () => {
         <section className={styles['order-section']}>
           <button onClick={closeModal} className={styles['btn-close']}>X</button>
           <article className={styles['order-info']}>
-              <h2 className={styles['info-title']}>Select quantity</h2>
+              <h2 className={styles['info-title']}>Enter required quantity</h2>
               <img src={img} className={styles.foto}/>
               <p className={styles['order-name']}>{orderName}</p>
               <p>Price: {price} €</p>
