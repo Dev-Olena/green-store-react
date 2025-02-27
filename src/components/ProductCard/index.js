@@ -1,6 +1,6 @@
-import React, {useContext, useEffect} from "react";
+import React, {useContext, useState} from "react";
 import CartContext from "../../contexts/CartContexts";
-
+import ModalOrder from "../ModalOder/ModalOrder";
 import Button from "../Button/Button";
 import styles from "./ProductCard.module.css"
 
@@ -9,6 +9,7 @@ import styles from "./ProductCard.module.css"
 const ProductCard = (props) => {
     const [cart, setCart] = useContext(CartContext);
     const{img, price, name, id} = props.productData;
+    const [isOrderOpen, setIsOrderOpen] = useState(false);
     
     const productName = name.toUpperCase();
 
@@ -25,7 +26,9 @@ const ProductCard = (props) => {
             } else {
                 return [...prevCart, {img, name, price, id, quantity: 1}]
             }
-        })
+        });
+
+        setIsOrderOpen(true);
         
     }
     
@@ -43,7 +46,7 @@ const ProductCard = (props) => {
                 clName='btn-add'>
                {btnText}
             </Button>
-            
+            {isOrderOpen && <ModalOrder id={id} handler = {setIsOrderOpen}/>}
         </article>
     )
 }
