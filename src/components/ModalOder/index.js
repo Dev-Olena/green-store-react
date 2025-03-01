@@ -1,6 +1,6 @@
 import React, { useContext } from 'react';
 import CartContext from '../../contexts/CartContexts';
-import Button from '../Button/Button';
+import Button from '../Button';
 import styles from './ModalOrder.module.css'
 
 const ModalOrder = ({handler, id}) => {

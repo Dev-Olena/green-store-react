@@ -1,15 +1,26 @@
-import React, {useContext, useState} from "react";
+import React, {useContext, useState, useEffect} from "react";
 import CartContext from "../../contexts/CartContexts";
 import ModalOrder from "../ModalOder";
-import Button from "../Button/Button";
+import Button from "../Button";
 import styles from "./ProductCard.module.css"
 
 
 
 const ProductCard = (props) => {
     const [cart, setCart] = useContext(CartContext);
-    const{img, price, name, id} = props.productData;
     const [isOrderOpen, setIsOrderOpen] = useState(false);
+    
+    useEffect(() => {
+        if(isOrderOpen) {
+          document.body.classList.add(styles['modal-open']);
+        } else {
+          document.body.classList.remove(styles['modal-open']);
+        }
+      
+        return () => document.body.classList.remove('modal-open');
+      }, [isOrderOpen]);
+    
+    const{img, price, name, id} = props.productData;
     
     const productName = name.toUpperCase();
 
