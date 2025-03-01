@@ -1,15 +1,20 @@
 import React, { useContext } from 'react';
+import { useNavigate } from 'react-router-dom';
 import CartContext from '../../contexts/CartContexts';
 import Button from '../Button';
 import styles from './ModalOrder.module.css'
 
 const ModalOrder = ({handler, id}) => {
 const [cart, setCart] = useContext(CartContext);
+const navigate = useNavigate();
 
 const order = cart.find((item) => item.id === id);
-console.log(order);
 const {img, name, price, quantity} = order;
 const orderName = name.toUpperCase();
+
+const goToCart = () => {
+  navigate("/cart")
+}
 
 const  closeModal = () => {
   handler(false);
@@ -26,10 +31,14 @@ const  closeModal = () => {
               <p>Quantity: {quantity}</p>  
           </article>
           <div className={styles['btn-container']}>
-            <Button clName='btn-back'>
-              Back to Store
+            <Button 
+                clName='btn-back'
+                onClick={closeModal}
+                >
+                Back to Store
             </Button>
-            <Button>
+            <Button
+                onClick={goToCart}>
               Proceed to Checkout 
             </Button>
           </div>
