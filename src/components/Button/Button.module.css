@@ -19,7 +19,7 @@
     width: 60%;
 }
 
-.del-btn, .btn-back {
+.del-btn, .btn-back, .btn-white {
     background-color: transparent;
     border: 1px solid var(--primary-green);
     color: var(--primary-green);
@@ -37,7 +37,7 @@
     justify-self: start;
 }
 
-.del-btn:hover, .btn-back:hover {
+.del-btn:hover, .btn-back:hover, .btn-white:hover {
     background-color: var(--primary-green);
     border: 1px solid transparent;
     color: white;

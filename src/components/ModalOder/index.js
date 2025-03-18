@@ -32,7 +32,7 @@ const  closeModal = () => {
           </article>
           <div className={styles['btn-container']}>
             <Button 
-                clName='btn-back'
+                clName='btn-white'
                 onClick={closeModal}
                 >
                 Back to Store

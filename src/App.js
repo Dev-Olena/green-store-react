@@ -3,7 +3,7 @@ import {BrowserRouter, Routes, Route, Link} from "react-router-dom";
 import CartContext from "./contexts/CartContexts";
 import Page from "./pages/Page/Page";
 import HomePage from "./pages/HomePage";
-import CartPage from "./pages/CartPage";
+import CartPage from "./pages/CartPage/CartPage.js";
 import './reset.css';
 import "./style.css"
 
