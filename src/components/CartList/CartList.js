@@ -40,7 +40,8 @@ const CartList = () => {
                 {cart.map((item) => <CartItem 
                     key={item.id} 
                     data={item} 
-                    className={styles['cart-list-container']}/>)}
+                    className={styles['cart-list-container']}/>
+                )}
                 <div className={`${styles.line} ${styles['bottom-line']}`}></div>
                 <Button 
                     onClick={goBack} 
@@ -56,10 +57,6 @@ const CartList = () => {
                         Checkout
                     </Button>
                 </div>
-           
-            
-            
-            
         </section>
     )
 }

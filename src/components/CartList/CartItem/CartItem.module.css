@@ -17,19 +17,6 @@
     grid-column: 2/3;
 }
 
-.quantity-container {
-    grid-column: 3/4;
-    display: flex;
-    flex-direction: row;
-   
-}
-
-.input{
-    width: 40px;
-    padding: 5px;
-    text-align: center;
-}
-
 .btn-del {
     height: 25%;
     padding: 0;
