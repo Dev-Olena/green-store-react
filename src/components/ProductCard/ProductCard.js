@@ -1,6 +1,6 @@
 import React, {useContext, useState, useEffect} from "react";
 import CartContext from "../../contexts/CartContexts";
-import ModalOrder from "../ModalOder";
+import ModalOrder from "../ModalOder/ModalOrder.js";
 import Button from "../Button";
 import styles from "./ProductCard.module.css"
 

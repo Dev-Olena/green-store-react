@@ -1,6 +1,6 @@
 import React from "react";
-import { plants } from "../../data/plants";
-import ProductCard from "../ProductCard";
+import { plants } from "../../data/plants.js";
+import ProductCard from "../ProductCard/ProductCard.js";
 import styles from "./Products.module.css";
 
 const Products = () => {

@@ -5,6 +5,7 @@ import styles from "./Quantity.module.css";
 const Quantity = (props) => {
     const [cart, setCart] = useContext(CartContext);
     const [id, quantity] = props.data;
+    const clName = props.clName;
 
     const decreaseCartItem = (id) => {
         setCart((prevCart) => {
@@ -41,7 +42,8 @@ const Quantity = (props) => {
     }
     
     return (
-        <div className={styles['quantity-container']}>
+        // <div className={styles['quantity-container']}>
+        <div className={styles[clName]}>
             <button onClick={() => decreaseCartItem(id)}>-</button>
             <input  className={styles.input} 
                     name="quantity"    

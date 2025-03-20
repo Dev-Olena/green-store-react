@@ -1,8 +1,8 @@
 import React, {useState, useEffect} from "react";
 import {BrowserRouter, Routes, Route, Link} from "react-router-dom";
 import CartContext from "./contexts/CartContexts";
-import Page from "./pages/Page/Page";
-import HomePage from "./pages/HomePage";
+import Page from "./pages/Page/Page.js";
+import HomePage from "./pages/HomePage/Home.js";
 import CartPage from "./pages/CartPage/CartPage.js";
 import './reset.css';
 import "./style.css"

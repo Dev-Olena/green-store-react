@@ -20,8 +20,8 @@ const CartItem = (props) => {
         <article className={styles['cart-item']}>
              <img src={img} className={styles.img}/> 
             <p className={styles.name}>{name}</p>
-            <Quantity data={[id, quantity]}/>
-            <p>{totalItemPrice} </p>
+            <Quantity clName = 'quantity-container' data={[id, quantity]}/>
+            <p>{totalItemPrice}</p>
             <button className={styles['btn-del']} onClick={() => removeFromCart(id)}>
                 <img src={delIcon} className={styles['del-icon']} alt="Product delete button"/>
             </button>
