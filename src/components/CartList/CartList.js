@@ -18,7 +18,7 @@ const CartList = () => {
         navigate("/");
     }
 
-    const totalPrice = cart.reduce((total, item) => total + item.price, 0).toFixed(2);
+    const totalPrice = cart.reduce((total, item) => total + item.price * item.quantity, 0).toFixed(2);
 
     
 

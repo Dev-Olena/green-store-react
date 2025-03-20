@@ -8,6 +8,8 @@ const CartItem = (props) => {
     const {img, name, price, id, quantity} = props.data;
     const delIcon = "/assets/delete.svg";
 
+    const totalItemPrice = price * quantity;
+
     const removeFromCart = (id) => {
         setCart((prevCart) => {
             return prevCart.filter((product) => product.id != id);
@@ -19,7 +21,7 @@ const CartItem = (props) => {
              <img src={img} className={styles.img}/> 
             <p className={styles.name}>{name}</p>
             <Quantity data={[id, quantity]}/>
-            <p>{price} </p>
+            <p>{totalItemPrice} </p>
             <button className={styles['btn-del']} onClick={() => removeFromCart(id)}>
                 <img src={delIcon} className={styles['del-icon']} alt="Product delete button"/>
             </button>
